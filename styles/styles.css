@@ -40,11 +40,6 @@
         display: flex;
         gap: 1em;
     }
-
-    /* containeir relacionado ao logo da página */
-    #logoAcad{
-        width: 6rem;
-    }
 }
 
 /* estilizando os links do nav, foi melhor separá-los para não aninhar tanta coisa!*/
@@ -56,6 +51,11 @@
     &:hover{
         color: rgb(88, 88, 88);
     }
+
+}
+
+.active{
+    color: rgb(248, 65, 44);
 }
 
 /* containeir relacionado ao conteúdo principal */
