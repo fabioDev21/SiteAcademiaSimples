@@ -58,11 +58,29 @@
     }
 }
 
-
-
 /* containeir relacionado ao conteúdo principal */
 .mainContainer{
     grid-area: mainContainer;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    #unidades, #sobre, #suporte{
+        display: flex;
+        flex-direction: column;
+
+        button{
+            padding: .3em;
+            border-radius: 5px;
+            border: 2px solid black;
+            width: 100px;
+        }
+    }
+
+}
+.box__column{
+    display: flex;
+    flex-direction: column;
 }
 
 footer{
