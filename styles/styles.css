@@ -11,12 +11,15 @@
 /* containeir relacionado ao corpo da página */
 .allContainer{
     display: grid;
+    justify-content: center;
     grid-template-areas: 
     "navBox"
     "mainContainer"
     "footer";
     grid-template-rows: 15vh 80vh 5vh;
+    grid-template-columns: 90vw;
     gap: 1em;
+    font-size: 18px;
 }
 
 /* containeir relacionado ao navbar */
@@ -69,7 +72,7 @@
     flex-direction: column;
     gap: 1em;
 
-    #servicos, #sobre, #suporte{
+    #sobre, #suporte{
         display: flex;
         flex-direction: column;
 
@@ -80,15 +83,31 @@
             width: 100px;
         }
     }
-
 }
-.box__column{
+
+#sobre{
+    align-items: center;
+    gap: 1.3em;
+    text-align: center;
+}
+h2{
+    text-align: center;    
+}
+#servicos{
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    gap: 1em;
+    .box__column{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 1em;
+        border: 2px solid red;
+        width: 300px;
+        text-align: center;
+        padding: 1em;
+    }
 }
-
-
-
 footer{
     grid-area: footer;
 }
