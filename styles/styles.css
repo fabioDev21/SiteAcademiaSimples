@@ -72,7 +72,7 @@
     flex-direction: column;
     gap: 1em;
 
-    #sobre, #suporte{
+    #sobre, #suporte, #servicos{
         display: flex;
         flex-direction: column;
 
@@ -94,6 +94,9 @@ h2{
     text-align: center;    
 }
 #servicos{
+    gap: 1em;
+}
+.internoBoxServicos{
     display: flex;
     justify-content: center;
     gap: 1em;
@@ -102,12 +105,18 @@ h2{
         flex-direction: column;
         flex-wrap: wrap;
         gap: 1em;
-        border: 2px solid red;
+        border: 2px solid salmon;
+        background-color: rgba(250, 128, 114, 0.424);
+        border-radius: 25px;
         width: 300px;
         text-align: center;
         padding: 1em;
     }
 }
+#suporte{
+
+}
+
 footer{
     grid-area: footer;
 }
