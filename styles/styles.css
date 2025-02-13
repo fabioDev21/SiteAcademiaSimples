@@ -16,10 +16,10 @@
     "navBox"
     "mainContainer"
     "footer";
-    grid-template-rows: 15vh 80vh 5vh;
-    grid-template-columns: 90vw;
-    gap: 1em;
+    grid-template-rows: 10vh 65vh 15vh;
+    gap: 5em;
     font-size: 18px;
+    background: linear-gradient(35deg, rgba(251, 251, 205, 0.214), rgba(255, 166, 0, 0.186));
 }
 
 /* containeir relacionado ao navbar */
@@ -33,7 +33,7 @@
     padding: .5em;
 
     /* o width não está do jeito que quero, otimizar depois */
-    max-width: 460px;
+    max-width: 600px;
     width: 40vw;
     height: 10vh;
     margin: 1em auto;
@@ -68,9 +68,14 @@
 /* containeir relacionado ao conteúdo principal */
 .mainContainer{
     grid-area: mainContainer;
-    display: flex;
+    grid-template-rows: 20 40 25;
+    grid-template-areas: 
+    "sobre"
+    "servicos"
+    "suporte";
+    display: grid;
     flex-direction: column;
-    gap: 1em;
+    gap: 3em;
 
     #sobre, #suporte, #servicos{
         display: flex;
@@ -86,15 +91,28 @@
 }
 
 #sobre{
+    grid-area: sobre;
     align-items: center;
     gap: 1.3em;
+    padding: 3em;
+    background-position: bottom;
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.785), rgba(0, 0, 0, 0.563)), url(../assets/imgs/gym_bg.jpg);
+    filter: drop-shadow(0 0 0.8rem rgba(0, 0, 0, 0.358));
+    color: salmon;
     text-align: center;
-}
-h2{
-    text-align: center;    
+    font-size: 1.3em;
+    p{
+        width: 90%;
+    }
 }
 #servicos{
+    grid-area: servicos;
     gap: 1em;
+    
+    h3{
+        text-align: center;    
+    }
+
 }
 .internoBoxServicos{
     display: flex;
@@ -113,10 +131,39 @@ h2{
         padding: 1em;
     }
 }
-#suporte{
+/* #suporte{
+    grid-area: suporte;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    padding: 1em;
+    color: salmon;
 
+    div{
+        display: flex;
+        justify-content: space-around;
+        gap: 1.5em;
+
+        .box__column{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2.3em;
+        }
+    }
+} */
+#zap-logo{
+    width: 7em;
+    background-color: rgba(250, 128, 114, 0.51);
+    filter: drop-shadow(0 0 0.8rem rgba(67, 219, 56, 0.584));
+    border-radius: 50%;
 }
 
 footer{
     grid-area: footer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
 }
