@@ -1,23 +1,14 @@
 /* containeir relacionado ao corpo da página */
 
-
-/* containeir relacionado ao conteúdo principal */
-.mainContainer{
-    grid-area: mainContainer;
+#sobre, #suporte, #servicos{
     display: flex;
     flex-direction: column;
-    gap: 3em;
 
-    #sobre, #suporte, #servicos{
-        display: flex;
-        flex-direction: column;
-
-        button{
-            padding: .3em;
-            border-radius: 5px;
-            border: 2px solid black;
-            width: 100px;
-        }
+    button{
+        padding: .3em;
+        border-radius: 5px;
+        border: 2px solid black;
+        width: 100px;
     }
 }
 
@@ -78,10 +69,10 @@
         }
     }
 } */
-#zap-logo{
+/* #zap-logo{
     width: 7em;
     background-color: rgba(250, 128, 114, 0.51);
     filter: drop-shadow(0 0 0.8rem rgba(67, 219, 56, 0.584));
     border-radius: 50%;
-}
+} */
 
