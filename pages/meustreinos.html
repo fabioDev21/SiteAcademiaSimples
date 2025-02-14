@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/base.css">
+    <link rel="stylesheet" href="../styles/meusTreinos.css">
+    <script src="../js/script.js" defer></script>
     <title>Academy | Meus treinos</title>
 </head>
 <body class="allContainer">
@@ -16,7 +18,33 @@
         </nav>
     </header>
     <main id="mainContainer">
-        <!-- aqui irão ter os treinos do cliente -->
+        <form id="adicionarNovoFrm">
+            <h3 class="mainContainer__title"> Monte seu novo treino abaixo! </h3>
+            <label for="nomeTreinoInpt">
+                <span>Adicione o nome do treino: </span>
+                <input id="nomeTreinoInpt" type="text">
+            </label>
+            <label for="qntSeriesInpt">
+                <span>Quantidade de séries: </span>
+                <input id="qntSeriesInpt" type="text">
+            </label>
+            <label for="parteExercInpt">
+                <span>Parte exercitada: </span>
+                <select id="parteExercInpt">
+                    <option value="escolheOption" selected>-- Escolha uma opção --</option>
+                    <option value="alongamento"> Alongamento 🔥</option>
+                    <option value="parteSuperior"> Parte Superior 💪</option>
+                    <option value="parteInferior"> Parte Inferior 🦵</option>
+                    <option value="cardio"> Cardio 🫀</option>
+                </select>
+            </label>
+            <button type="submit"> Enviar </button>
+        </form>
+        <div id="treinosAdicionados"></div>
+        <div id="treinosProntos">
+            <h3 class="mainContainer__title"> Veja alguns treinos da comunidade abaixo</h3>
+            <!-- Aqui devem haver opções selecionáveis pelo usuário -->
+        </div>
     </main>
     <footer>
         <p>&copy; Fábio da Silva</p>
