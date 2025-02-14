@@ -20,6 +20,11 @@
     background: linear-gradient(35deg, rgba(251, 251, 205, 0.214), rgba(255, 166, 0, 0.186));
 }
 
+.mainContainer__title{
+    font-size: 1.5em;
+    text-align: center;    
+}
+
 /* containeir relacionado ao navbar */
 .navBox{
 
@@ -33,7 +38,7 @@
 
     /* o width não está do jeito que quero, otimizar depois */
     max-width: 600px;
-    width: 50vw;
+    width: 40vw;
     height: 10vh;
     margin: 1em auto;
     gap: 1em;
@@ -55,15 +60,28 @@
     transition: .4s;
     
     &:hover{
-        color: rgb(88, 88, 88);
+        color: rgb(255, 94, 76);
+
     }
 
 }
 
 .active{
-    color: rgb(248, 65, 44);
+    display: none;
+
+    /* ideia pausada no momento, posso utilizar mais tarde */
+    /* color: rgb(248, 65, 44);
 
     &:hover{
         color: brown;
-    }
+    } */
+}
+
+footer{
+    grid-area: footer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
 }

@@ -4,12 +4,7 @@
 /* containeir relacionado ao conteúdo principal */
 .mainContainer{
     grid-area: mainContainer;
-    grid-template-rows: 20 40 25;
-    grid-template-areas: 
-    "sobre"
-    "servicos"
-    "suporte";
-    display: grid;
+    display: flex;
     flex-direction: column;
     gap: 3em;
 
@@ -35,20 +30,15 @@
     background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.785), rgba(0, 0, 0, 0.563)), url(../assets/imgs/gym_bg.jpg);
     filter: drop-shadow(0 0 0.8rem rgba(0, 0, 0, 0.358));
     color: salmon;
-    text-align: center;
-    font-size: 1.3em;
     p{
         width: 90%;
+        text-align: center;
+        font-size: 1.3em;
     }
 }
 #servicos{
     grid-area: servicos;
-    gap: 1em;
-    
-    h3{
-        text-align: center;    
-    }
-
+    gap: 1.5em;
 }
 .internoBoxServicos{
     display: flex;
@@ -95,11 +85,3 @@
     border-radius: 50%;
 }
 
-footer{
-    grid-area: footer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: black;
-    color: white;
-}
