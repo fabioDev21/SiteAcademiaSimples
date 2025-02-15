@@ -15,7 +15,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        background: linear-gradient(35deg, #d1d1d1, #858585);
+        background: linear-gradient(35deg, rgb(252, 218, 156), rgb(238, 202, 136));
         border: 4px solid rgba(255, 155, 47, 0.993);
         padding: 1em;
         border-radius: 20px;
@@ -49,22 +49,7 @@
     text-align: center;
 }
 
-.addNovoTreino__btn{
-    margin: 1em;
-    padding: 1em;
-    font-size: 1.2em;
-    background-color: transparent;
-    border: 5px solid orange;
-    border-radius: 25px;
-    color: rgb(164, 107, 1);
-    transition: .4s;
-    cursor: pointer;
-    
-    &:hover{
-        background-color: orange;
-        color: black;
-    }
-}
+
 
 .elementoTreino__btn{
     margin: 1em;
@@ -79,9 +64,27 @@
     background-color: orange;
 
     &:hover{
-        background-color: rgb(205, 133, 0);
-        color: rgb(255, 255, 255);
-        border-color: rgba(255, 255, 255, 0.62);
+        background-color: #f7c973;
+        transform: scale(1.1);
+        color: black;
+        border-color: black;
+    }
+}
+.addNovoTreino__btn{
+    margin: 1em;
+    padding: 1em;
+    font-size: 1.2em;
+    background-color: transparent;
+    border: 5px solid orange;
+    border-radius: 25px;
+    color: rgb(0, 0, 0);
+    transition: .4s;
+    cursor: pointer;
+    
+    &:hover{
+        transform: scale(1.1);
+        background-color: orange;
+        color: black;
     }
 }
 /* estilização do form principal para adição de treinos */
