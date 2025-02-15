@@ -19,7 +19,7 @@
     </header>
     <main id="mainContainer">
         <form id="adicionarNovoFrm">
-            <h3 class="mainContainer__title"> Monte seu novo treino abaixo! </h3>
+            <h3 class="mainContainer__title"> Quais serão os treinos de hoje? </h3>
             <label for="nomeTreinoInpt">
                 <span>Adicione o nome do treino: </span>
                 <input id="nomeTreinoInpt" type="text">
@@ -27,6 +27,10 @@
             <label for="qntSeriesInpt">
                 <span>Quantidade de séries: </span>
                 <input id="qntSeriesInpt" type="text">
+            </label>
+            <label for="cargaExercicio">
+                <span>Carga: </span>
+                <input type="text" id="cargaExercicio">
             </label>
             <label for="parteExercInpt">
                 <span>Parte exercitada: </span>
@@ -37,12 +41,18 @@
                     <option value="parteInferior"> Parte Inferior 🦵</option>
                     <option value="cardio"> Cardio 🫀</option>
                 </select>
+                <input type="file" id="imagemDoTreino">
             </label>
             <button type="submit"> Enviar </button>
         </form>
-        <div id="treinosAdicionados"></div>
-        <div id="treinosProntos">
-            <h3 class="mainContainer__title"> Veja alguns treinos da comunidade abaixo</h3>
+        <div id="treinosAdicionados" class="caixaTreinos">
+            <h3 class="mainContainer__title"> Aqui estão seus exercícios personalizados</h3>
+        </div>
+        <div id="treinosUltimos" class="caixaTreinos">
+            <h3 class="mainContainer__title"> Estes forams seus últimos treinos</h3>
+        </div>
+        <div id="treinosProntos" class="caixaTreinos">
+            <h3 class="mainContainer__title"> Veja alguns treinos prontos da comunidade</h3>
             <!-- Aqui devem haver opções selecionáveis pelo usuário -->
         </div>
     </main>
