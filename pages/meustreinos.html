@@ -25,7 +25,7 @@
                     <h4>Treino iniciante</h4>
                     <p>Costas, Bíceps e Tríceps</p>
                 </div>
-                <p>Clique e veja as características</p>
+                <button class="elementoTreino__btn">Visualizar</button>
             </div>
             <div class="elementoTreino">
                 <img src="../assets/imgs/gym_bg.jpg" alt="Imagem do treino adicionado">
@@ -33,7 +33,7 @@
                     <h4>Treino força superior</h4>
                     <p>Braços, peito e cardio</p>
                 </div>
-                <p>Clique e veja as características</p>
+                <button class="elementoTreino__btn">Visualizar</button>
             </div>
             <div class="elementoTreino">
                 <img src="../assets/imgs/gym_bg.jpg" alt="Imagem do treino adicionado">
@@ -41,37 +41,39 @@
                     <h4>Treino geral light</h4>
                     <p>Braço, Pernas e Cardio</p>
                 </div>
-                <p>Clique e veja as características</p>
+                <button class="elementoTreino__btn">Visualizar</button>
             </div>
         </div>
-        <h3 class="mainContainer__title"> Deseja adicionar um novo treino ?<br> Clique no botão abaixo!</h3>
-        <button id="addNovoTreino"> Adicionar treino</button>
-        <form id="adicionarNovoFrm">
-            <label for="nomeTreinoInpt">
-                <span>Adicione o nome do treino: </span>
-                <input id="nomeTreinoInpt" type="text">
-            </label>
-            <label for="qntSeriesInpt">
-                <span>Quantidade de séries: </span>
-                <input id="qntSeriesInpt" type="text">
-            </label>
-            <label for="cargaExercicio">
-                <span>Carga: </span>
-                <input type="text" id="cargaExercicio">
-            </label>
-            <label for="parteExercInpt">
-                <span>Parte exercitada: </span>
-                <select id="parteExercInpt">
-                    <option value="escolheOption" selected>-- Escolha uma opção --</option>
-                    <option value="alongamento"> Alongamento 🔥</option>
-                    <option value="parteSuperior"> Parte Superior 💪</option>
-                    <option value="parteInferior"> Parte Inferior 🦵</option>
-                    <option value="cardio"> Cardio 🫀</option>
-                </select>
-                <input type="file" id="imagemDoTreino">
-            </label>
-            <button type="submit"> Enviar </button>
-        </form>
+        <div id="addNovoTreinoBox">
+            <h3 class="mainContainer__title"> Deseja adicionar um novo treino ?<br> Clique no botão abaixo!</h3>
+            <button class="addNovoTreino__btn"> Adicionar treino</button>
+            <form id="adicionarNovoFrm">
+                <label for="nomeTreinoInpt">
+                    <span>Adicione o nome do treino: </span>
+                    <input id="nomeTreinoInpt" type="text">
+                </label>
+                <label for="qntSeriesInpt">
+                    <span>Quantidade de séries: </span>
+                    <input id="qntSeriesInpt" type="text">
+                </label>
+                <label for="cargaExercicio">
+                    <span>Carga: </span>
+                    <input type="text" id="cargaExercicio">
+                </label>
+                <label for="parteExercInpt">
+                    <span>Parte exercitada: </span>
+                    <select id="parteExercInpt">
+                        <option value="escolheOption" selected>-- Escolha uma opção --</option>
+                        <option value="alongamento"> Alongamento 🔥</option>
+                        <option value="parteSuperior"> Parte Superior 💪</option>
+                        <option value="parteInferior"> Parte Inferior 🦵</option>
+                        <option value="cardio"> Cardio 🫀</option>
+                    </select>
+                    <input type="file" id="imagemDoTreino">
+                </label>
+                <button type="submit"> Enviar </button>
+            </form>
+        </div>
     </main>
     <footer>
         <p>&copy; Fábio da Silva</p>
