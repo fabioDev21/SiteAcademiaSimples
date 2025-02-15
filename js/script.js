@@ -45,15 +45,17 @@ function mostraNovoTreino({idCaixaTreino, nome, series, parte, carga, imgTreino}
 
     const caixaParaAddTreinos = document.querySelector("#treinosAdicionados")
     const novoTreino = `
-        <div id="treino${idCaixaTreino}" class="elementoTreino">
+        <div class="elementoTreino" id="criado${idCaixaTreino}">
             <img src="${imgTreino}" alt="Imagem do treino adicionado">
-            <h4>${nome} - ${parte}</h4>
-            <p>Características: </p>
-            <p>Repetições ou Séries: ${series}</p>
-            <p>Carga: ${carga}</p>
+            <div class="elementoTreino__titleNsubtitle">
+                <h4>${nome}</h4>
+                <p>${parte}</p>
+            </div>
+            <button class="elementoTreino__btn">Visualizar</button>
         </div>` 
     caixaParaAddTreinos.insertAdjacentHTML('afterbegin', novoTreino)
 
+    dialogForms.close()
     // estilizar a forma como o treino aparece e como a imagem do treino aparece, estilizar formulario
     // que seja possível editar o treino também,.muito necessário.
     // fazer o crud complete dessa página de treinos e refatorar o código para seu devido depois
