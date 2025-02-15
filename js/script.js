@@ -1,17 +1,8 @@
-const allContainer = document.querySelector(`.allContainer`)
-window.addEventListener(`load`, () => {
-    const treinosAdicionados = document.querySelector('#treinosAdicionados')
-    const treinosUltimos = document.querySelector('#treinosUltimos')
-    const treinosProntos = document.querySelector('#treinosProntos')
-    const imgPlaceholderSemTreinos = `<img src="../assets/imgs/img-sem-treinos.png">`
+const addNovoTreinoBtn = document.querySelector('.addNovoTreino__btn')
+const dialogForms = document.querySelector('#dialogForm')
 
-    if(!treinosAdicionados.children.length < 1 || !treinosUltimos.children.length < 1 || !treinosProntos.children.length < 1){
-        treinosAdicionados.insertAdjacentHTML(`beforeend`, imgPlaceholderSemTreinos)
-        treinosUltimos.insertAdjacentHTML(`beforeend`, imgPlaceholderSemTreinos)
-        treinosProntos.insertAdjacentHTML(`beforeend`, imgPlaceholderSemTreinos)
-    }
-
-
+addNovoTreinoBtn.addEventListener('click', () => {
+    dialogForms.showModal()
 })
 
 const formMeusTreinos = document.querySelector('#adicionarNovoFrm')

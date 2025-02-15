@@ -47,32 +47,37 @@
         <div id="addNovoTreinoBox">
             <h3 class="mainContainer__title"> Deseja adicionar um novo treino ?<br> Clique no botão abaixo!</h3>
             <button class="addNovoTreino__btn"> Adicionar treino</button>
-            <form id="adicionarNovoFrm">
-                <label for="nomeTreinoInpt">
-                    <span>Adicione o nome do treino: </span>
-                    <input id="nomeTreinoInpt" type="text">
-                </label>
-                <label for="qntSeriesInpt">
-                    <span>Quantidade de séries: </span>
-                    <input id="qntSeriesInpt" type="text">
-                </label>
-                <label for="cargaExercicio">
-                    <span>Carga: </span>
-                    <input type="text" id="cargaExercicio">
-                </label>
-                <label for="parteExercInpt">
-                    <span>Parte exercitada: </span>
-                    <select id="parteExercInpt">
-                        <option value="escolheOption" selected>-- Escolha uma opção --</option>
-                        <option value="alongamento"> Alongamento 🔥</option>
-                        <option value="parteSuperior"> Parte Superior 💪</option>
-                        <option value="parteInferior"> Parte Inferior 🦵</option>
-                        <option value="cardio"> Cardio 🫀</option>
-                    </select>
-                    <input type="file" id="imagemDoTreino">
-                </label>
-                <button type="submit"> Enviar </button>
-            </form>
+            <dialog id="dialogForm">
+                <form id="adicionarNovoFrm">
+                    <label for="nomeTreinoInpt">
+                        <p>Adicione o nome do treino: </p>
+                        <input id="nomeTreinoInpt" type="text">
+                    </label>
+                    <label for="qntSeriesInpt">
+                        <p>Quantidade de séries: </p>
+                        <input id="qntSeriesInpt" type="text">
+                    </label>
+                    <label for="cargaExercicio">
+                        <p>Carga: </p>
+                        <input type="text" id="cargaExercicio">
+                    </label>
+                    <label for="parteExercInpt">
+                        <span>Parte exercitada: </span>
+                        <input type="checkbox" name="" id="">
+                        <select id="parteExercInpt">
+                            <option value="escolheOption" selected>-- Escolha uma opção --</option>
+                            <option value="alongamento"> Alongamento 🔥</option>
+                            <option value="parteSuperior"> Parte Superior 💪</option>
+                            <option value="parteInferior"> Parte Inferior 🦵</option>
+                            <option value="cardio"> Cardio 🫀</option>
+                        </select>
+                        <label for="imagemDoTreino">
+                            <input type="file" id="imagemDoTreino">
+                        </label>
+                    </label>
+                    <button type="submit"> Enviar </button>
+                </form>
+            </dialog>
         </div>
     </main>
     <footer>

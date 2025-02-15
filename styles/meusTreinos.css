@@ -88,11 +88,25 @@
     }
 }
 /* estilização do form principal para adição de treinos */
+/* #dialogForms{
+
+} */
+#dialogForm{
+    margin: auto;
+    height: 50vh;
+    border-radius: 30px;
+    background-color: #fadda8;
+}
+#dialogForm::backdrop{
+    background-color: rgba(0, 0, 0, 0.551);
+}
 form{
 
     /* adicionar estilização formulário */
-    display: none;
+    display: flex;
     flex-direction: column;
+    inset: 0;
+    top: 50px;
     justify-content: center;
     width: 500px;
     margin: 1em auto;
