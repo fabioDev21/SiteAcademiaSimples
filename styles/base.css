@@ -66,21 +66,19 @@
     transition: .4s;
     
     &:hover{
-        color: rgb(255, 94, 76);
+        color: rgb(248, 65, 44);
 
     }
 
 }
 
 .active{
-    display: none;
 
-    /* ideia pausada no momento, posso utilizar mais tarde */
-    /* color: rgb(248, 65, 44);
+    color: rgb(248, 65, 44);
 
     &:hover{
         color: brown;
-    } */
+    }
 }
 
 footer{

@@ -11,15 +11,42 @@
 <body class="allContainer">
     <header class="navBox">
         <nav>
-            <a class="linkToNav" href="../index.html">Home</a>
-            <a class="linkToNav active" href="meustreinos.html">Meus treinos</a>
-            <a class="linkToNav" href="perfil.html">Meu Perfil</a>
-            <a class="linkToNav" href="comunidade.html">Comunidade</a>
+            <a class="linkToNav" href="../index.html" title="Home">Home</a>
+            <a class="linkToNav active" href="meustreinos.html" title="Meus treinos">Meus treinos</a>
+            <a class="linkToNav" href="perfil.html" title="Meu perfil">Meu perfil</a>
         </nav>
     </header>
     <main id="mainContainer">
+        <h3 class="mainContainer__title"> Indicados pelo seu treinador! </h3>
+        <div id="treinosProntos" class="caixaTreinos">
+            <div class="elementoTreino">
+                <img src="../assets/imgs/gym_bg.jpg" alt="Imagem do treino adicionado">
+                <div class="elementoTreino__titleNsubtitle">
+                    <h4>Treino iniciante</h4>
+                    <p>Costas, Bíceps e Tríceps</p>
+                </div>
+                <p>Clique e veja as características</p>
+            </div>
+            <div class="elementoTreino">
+                <img src="../assets/imgs/gym_bg.jpg" alt="Imagem do treino adicionado">
+                <div class="elementoTreino__titleNsubtitle">
+                    <h4>Treino força superior</h4>
+                    <p>Braços, peito e cardio</p>
+                </div>
+                <p>Clique e veja as características</p>
+            </div>
+            <div class="elementoTreino">
+                <img src="../assets/imgs/gym_bg.jpg" alt="Imagem do treino adicionado">
+                <div class="elementoTreino__titleNsubtitle">
+                    <h4>Treino geral light</h4>
+                    <p>Braço, Pernas e Cardio</p>
+                </div>
+                <p>Clique e veja as características</p>
+            </div>
+        </div>
+        <h3 class="mainContainer__title"> Deseja adicionar um novo treino ?<br> Clique no botão abaixo!</h3>
+        <button id="addNovoTreino"> Adicionar treino</button>
         <form id="adicionarNovoFrm">
-            <h3 class="mainContainer__title"> Quais serão os treinos de hoje? </h3>
             <label for="nomeTreinoInpt">
                 <span>Adicione o nome do treino: </span>
                 <input id="nomeTreinoInpt" type="text">
@@ -45,16 +72,6 @@
             </label>
             <button type="submit"> Enviar </button>
         </form>
-        <div id="treinosAdicionados" class="caixaTreinos">
-            <h3 class="mainContainer__title"> Aqui estão seus exercícios personalizados</h3>
-        </div>
-        <div id="treinosUltimos" class="caixaTreinos">
-            <h3 class="mainContainer__title"> Estes forams seus últimos treinos</h3>
-        </div>
-        <div id="treinosProntos" class="caixaTreinos">
-            <h3 class="mainContainer__title"> Veja alguns treinos prontos da comunidade</h3>
-            <!-- Aqui devem haver opções selecionáveis pelo usuário -->
-        </div>
     </main>
     <footer>
         <p>&copy; Fábio da Silva</p>

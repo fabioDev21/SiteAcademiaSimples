@@ -2,8 +2,9 @@ img{
     width: 150px;
 }
 form{
+
     /* adicionar estilização formulário */
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     /* text-align: st; */
@@ -20,5 +21,48 @@ form{
         width: 5em;
         margin: auto;
         padding: .5em;
+    }
+}
+.caixaTreinos{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em;
+    margin: 1.5em;
+
+    
+    
+    .elementoTreino{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: linear-gradient(35deg, #d1d1d1, #858585);
+        border: 4px solid rgba(255, 155, 47, 0.993);
+        padding: 1em;
+        border-radius: 20px;
+        width: 300px;
+        overflow: hidden;
+        transition: .4s;
+        cursor: pointer;
+        
+        &:hover{
+            transform: scale(1.1);
+        }
+
+        img{
+            position: inherit;
+            top: -30px;
+            width: 300px;
+            filter: brightness(35%); 
+        }
+        .elementoTreino__titleNsubtitle{
+            color: rgb(37, 37, 37);
+            text-align: center;
+            margin-bottom: .5em;
+            font-size: 1.2em;
+        }
+
     }
 }

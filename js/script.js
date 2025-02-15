@@ -68,4 +68,15 @@ function mostraNovoTreino({idCaixaTreino, nome, series, parte, carga, imgTreino}
     // fazer o crud complete dessa página de treinos e refatorar o código para seu devido depois
     // fazer o condicionamento de parâmetros recebidos!!!
 
+
+    // treino a adicionar quando e ele decidir criar um treino novo
+    // <div id="treinosAdicionados" class="caixaTreinos">
+    // <h3 class="mainContainer__title"> Aqui estão seus exercícios personalizados</h3>
+    // </div>
+    
+    
+    // últimos treinos para mostrar abaixo do gráfico do usuário em seu perfil
+    // <div id="treinosUltimos" class="caixaTreinos">
+    // <h3 class="mainContainer__title"> Estes forams seus últimos treinos</h3>
+    // </div>
 }
