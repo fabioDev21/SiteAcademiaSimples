@@ -7,9 +7,6 @@
     justify-content: center;
     gap: 1em;
     margin: 1.5em;
-
-    
-    
 }
 
 .elementoTreino{
@@ -48,9 +45,8 @@
 #addNovoTreinoBox{
     margin: 3em;
     text-align: center;
+    height: auto;
 }
-
-
 
 .elementoTreino__btn{
     margin: 1em;

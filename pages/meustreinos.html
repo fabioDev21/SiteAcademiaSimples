@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/base.css">
     <link rel="stylesheet" href="../styles/meusTreinos.css">
-    <script src="../js/script.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="../js/meusTreinos.js" defer></script>
     <title>Academy | Meus treinos</title>
 </head>
 <body class="allContainer">
@@ -53,32 +54,44 @@
                         <p>Adicione o nome do treino: </p>
                         <input id="nomeTreinoInpt" type="text">
                     </label>
-                    <label for="qntSeriesInpt">
-                        <p>Quantidade de séries: </p>
-                        <input id="qntSeriesInpt" type="number">
-                    </label>
-                    <label for="cargaExercicio">
-                        <p>Carga: </p>
-                        <input type="number" id="cargaExercicio">
-                    </label>
-                    <label for="parteExercInpt">
-                        <select id="parteExercInpt">
+                    <label for="partesExercInpt" class="partesExercLabels">
+                        <span>Grupo 1: </span>
+                        <select class="partesExercInpt">
                             <option value="escolheOption" selected>-- Escolha uma opção --</option>
-                            <option value="alongamento"> Alongamento 🔥</option>
-                            <option value="parteSuperior"> Parte Superior 💪</option>
-                            <option value="parteInferior"> Parte Inferior 🦵</option>
-                            <option value="cardio"> Cardio 🫀</option>
+                            <option value="alongamento">Alongamento 🚀</option>
+                            <option value="parteSuperior">Parte Superior 💪</option>
+                            <option value="parteInferior">Parte Inferior 🦵</option>
+                            <option value="cardio">Cardio 🫀</option>
                         </select>
-                        <label for="imagemDoTreino">
-                            <input type="file" id="imagemDoTreino">
-                        </label>
+                    </label>
+                    <label for="partesExercInpt" class="partesExercLabels">
+                        <span>Grupo 2: </span>
+                        <select class="partesExercInpt">
+                            <option value="escolheOption" selected>-- Escolha uma opção --</option>
+                            <option value="alongamento">Alongamento 🚀</option>
+                            <option value="parteSuperior">Parte Superior 💪</option>
+                            <option value="parteInferior">Parte Inferior 🦵</option>
+                            <option value="cardio">Cardio 🫀</option>
+                        </select>
+                    </label>
+                    <label for="partesExercInpt" class="partesExercLabels">
+                        <span>Grupo 3: </span>
+                        <select class="partesExercInpt">
+                            <option value="escolheOption" selected>-- Escolha uma opção --</option>
+                            <option value="alongamento">Alongamento 🚀</option>
+                            <option value="parteSuperior">Parte Superior 💪</option>
+                            <option value="parteInferior">Parte Inferior 🦵</option>
+                            <option value="cardio">Cardio 🫀</option>
+                        </select>
+                    </label>
+                    <label for="imagemDoTreino">
+                        <input type="file" id="imagemDoTreino">
                     </label>
                     <button type="submit"> Enviar </button>
                 </form>
             </dialog>
         </div>
         <div id="treinosAdicionados">
-            
         </div>
     </main>
     <footer>
