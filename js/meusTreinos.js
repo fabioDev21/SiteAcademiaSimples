@@ -25,9 +25,9 @@ partesExercitadas.forEach((selectItem, index) => {
             `
             <div class='tiposTreinos'>
                 <label for="tiposTreinosAlongamento">
-                    <input type="checkbox" value="triceps">
+                    <input type="checkbox" value="Tríceps">
                     <span>Tríceps</span>
-                    <input type="checkbox" value="torsaoSentada">
+                    <input type="checkbox" value="Torsão Sentada">
                     <span>Torsão sentada</span>
                 </label>
             </div>                
@@ -42,9 +42,9 @@ partesExercitadas.forEach((selectItem, index) => {
             `
             <div class='tiposTreinos'>
                 <label for="tiposTreinosSuperior">
-                    <input type="checkbox" value="supino">
+                    <input type="checkbox" value="Supino">
                     <span>Supino</span>
-                    <input type="checkbox" value="crucifixoFrontal">
+                    <input type="checkbox" value="Crucifixo Frontal">
                     <span>Crucifixo frontal</span>
                 </label>
             </div>                
@@ -59,9 +59,9 @@ partesExercitadas.forEach((selectItem, index) => {
             `
             <div class='tiposTreinos'>
                 <label for="tiposTreinosInferior">
-                    <input type="checkbox" value="flexaoPernas">
+                    <input type="checkbox" value="Flexão Pernas">
                     <span>Flexão Pernas</span>
-                    <input type="checkbox" value="legPress">
+                    <input type="checkbox" value="Leg Press">
                     <span>Leg Press</span>
                 </label>
             </div>                
@@ -158,10 +158,11 @@ function mostraNovoTreino({idCaixaTreino, nome, parte1, parte2, parte3, imgTrein
             </div>
             <button class="elementoTreino__btn">Visualizar</button>
         </div>` 
-    caixaParaAddTreinos.insertAdjacentHTML('afterbegin', novoTreino)
+    caixaParaAddTreinos.insertAdjacentHTML('beforeend', novoTreino)
+    document.querySelector('body').style.gridTemplateRows = "15vh 150vh 15vh"
 
     dialogForms.close()
-     
+    
     // estilizar a forma como o treino aparece e como a imagem do treino aparece, estilizar formulario
     // que seja possível editar o treino também,.muito necessário.
     // fazer o crud complete dessa página de treinos e refatorar o código para seu devido depois
