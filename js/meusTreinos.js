@@ -12,7 +12,6 @@ formMeusTreinos.addEventListener('submit', (e) => {
 })
 
 const partesExercitadas = document.querySelectorAll('.partesExercInpt')
-
 partesExercitadas.forEach((selectItem, index) => {
     selectItem.addEventListener('change', el => {
         const elPaiDoSelectItem = document.querySelectorAll(".partesExercLabels")[index]
@@ -100,10 +99,9 @@ partesExercitadas.forEach((selectItem, index) => {
             `)
             
         }
+
     })
 })
-
-
 
 function criaNovoTreino(){
     const idElemento = Date.now()
@@ -115,21 +113,40 @@ function criaNovoTreino(){
         Criamos uma URL temporária com URL.createObjectURL(imagemArquivo),
         que permite exibir a imagem sem precisar enviá-la para um servidor.
     */
-    // const dadoImagemColetado = document.querySelector('#imagemDoTreino').files[0]
-    // const imagemDoTreino = URL.createObjectURL(dadoImagemColetado)
+    const dadoImagemColetado = document.querySelector('#imagemDoTreino').files[0]
+    const imagemDoTreino = URL.createObjectURL(dadoImagemColetado)
 
-    // const novoTreinoCriado = {
-    //     idCaixaTreino: idElemento,
-    //     nome: nomeDoTreino,
-    //     parte: partesExercitadas,
-    //     imgTreino: imagemDoTreino
-    // }
-
-    // mostraNovoTreino(novoTreinoCriado)
+    const todasAsPartesExercitadas = coletaValuesDasPartesExercitadas()
+    console.log(todasAsPartesExercitadas)
+    
+    const novoTreinoCriado = {
+        idCaixaTreino: idElemento,
+        nome: nomeDoTreino,
+        parte1: todasAsPartesExercitadas[0],
+        parte2: todasAsPartesExercitadas[1],
+        parte3: todasAsPartesExercitadas[2],
+        imgTreino: imagemDoTreino
+    }
+    
+    console.log(novoTreinoCriado)
+    mostraNovoTreino(novoTreinoCriado)
 }
 
-function mostraNovoTreino({idCaixaTreino, nome, parte, imgTreino}){
+function coletaValuesDasPartesExercitadas(){
+    const todosOsValuesGrupos = []
+    const partesExercitadasValues = document.querySelectorAll('.tiposTreinos > label > input:checked')
 
+    partesExercitadasValues.forEach( (el) => {
+        todosOsValuesGrupos.push(el.defaultValue)
+    })
+
+    return todosOsValuesGrupos
+}
+
+
+function mostraNovoTreino({idCaixaTreino, nome, parte1, parte2, parte3, imgTreino}){
+
+    console.log(parte1, parte2, parte3)
     const caixaParaAddTreinos = document.querySelector("#treinosAdicionados")
     const novoTreino = `
         <div class="elementoTreino" id="criado${idCaixaTreino}">
@@ -137,7 +154,7 @@ function mostraNovoTreino({idCaixaTreino, nome, parte, imgTreino}){
             <img src="${imgTreino}" alt="Imagem do treino adicionado">
             <div class="elementoTreino__titleNsubtitle">
                 <h4>${nome}</h4>
-                <p>${parte[0]}, ${parte[1]} e ${parte[2]}</p>
+                <p>${parte1}, ${parte2} e ${parte3}</p>
             </div>
             <button class="elementoTreino__btn">Visualizar</button>
         </div>` 
