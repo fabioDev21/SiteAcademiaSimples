@@ -50,7 +50,7 @@
     text-align: center;
 }
 
-.elementoTreino__btn{
+.elementoTreino__btnView{
     margin: 1em;
     width: 50%;
     font-size: .9em;
@@ -145,7 +145,7 @@
     justify-content: center;
     align-items: center;
     padding: .5em;
-    
+    align
     span{
         margin-inline: .5em 1em;
     }

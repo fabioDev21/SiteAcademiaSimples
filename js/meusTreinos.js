@@ -1,6 +1,10 @@
 const addNovoTreinoBtn = document.querySelector('.addNovoTreino__btn')
 const btnFecharBoxNovoTreino = document.querySelector('.addNovoTreinoBox__btnFechar')
 const dialogForms = document.querySelector('#dialogForm')
+const btnViewTreino = document.querySelectorAll(".elementoTreino__btnView")
+btnViewTreino.forEach(unBtn => {
+    unBtn.addEventListener('click', el => console.log(el))
+})
 
 addNovoTreinoBtn.addEventListener('click', () => {
     dialogForms.showModal() 
@@ -122,7 +126,6 @@ function criaNovoTreino(){
     const imagemDoTreino = URL.createObjectURL(dadoImagemColetado)
 
     const todasAsPartesExercitadas = coletaValuesDasPartesExercitadas()
-    console.log(todasAsPartesExercitadas)
     
     const novoTreinoCriado = {
         idCaixaTreino: idElemento,
@@ -133,7 +136,6 @@ function criaNovoTreino(){
         imgTreino: imagemDoTreino
     }
     
-    console.log(novoTreinoCriado)
     mostraNovoTreino(novoTreinoCriado)
 }
 
@@ -161,10 +163,15 @@ function mostraNovoTreino({idCaixaTreino, nome, parte1, parte2, parte3, imgTrein
                 <h4>${nome}</h4>
                 <p>${parte1}, ${parte2} e ${parte3}</p>
             </div>
-            <button class="elementoTreino__btn">Visualizar</button>
+            <button id="criado${idCaixaTreino}" class="elementoTreino__btnView">Visualizar</button>
         </div>` 
     caixaParaAddTreinos.insertAdjacentHTML('beforeend', novoTreino)
     document.querySelector('body').style.gridTemplateRows = "15vh 150vh 15vh"
+
+    const btnViewNewTreino = document.getElementById(`criado${idCaixaTreino}`)
+    btnViewNewTreino.addEventListener('click', el => {
+        console.log(el.view)
+    })
 
     dialogForms.close()
     
