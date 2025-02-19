@@ -1,5 +1,4 @@
 const addNovoTreinoBtn = document.querySelector('.addNovoTreino__btn')
-const btnFecharBoxNovoTreino = document.querySelector('.addNovoTreinoBox__btnFechar')
 const dialogForms = document.querySelector('#dialogForm')
 const btnViewTreino = document.querySelectorAll(".elementoTreino__btnView")
 btnViewTreino.forEach(unBtn => {
@@ -7,11 +6,7 @@ btnViewTreino.forEach(unBtn => {
 })
 
 addNovoTreinoBtn.addEventListener('click', () => {
-    dialogForms.showModal() 
-    btnFecharBoxNovoTreino.addEventListener('click', () => {
-        dialogForms.close()
-    })
-
+    dialogForms.showModal()
 })
 
 const formMeusTreinos = document.querySelector('#adicionarNovoFrm')
@@ -175,9 +170,20 @@ function mostraNovoTreino({idCaixaTreino, nome, parte1, parte2, parte3, imgTrein
 
     dialogForms.close()
     
-    // estilizar a forma como o treino aparece e como a imagem do treino aparece, estilizar formulario [feito]
+    // estilizar a forma como o treino aparece e como a imagem do treino aparece, estilizar formulario
     // que seja possível editar o treino também,.muito necessário.
     // fazer o crud complete dessa página de treinos e refatorar o código para seu devido depois
-    // fazer o condicionamento de parâmetros recebidos!!! [feito]    
+    // fazer o condicionamento de parâmetros recebidos!!!
+
+
+    // treino a adicionar quando e ele decidir criar um treino novo
+    // <div id="treinosAdicionados" class="caixaTreinos">
+    // <h3 class="mainContainer__title"> Aqui estão seus exercícios personalizados</h3>
+    // </div>
     
+    
+    // últimos treinos para mostrar abaixo do gráfico do usuário em seu perfil
+    // <div id="treinosUltimos" class="caixaTreinos">
+    // <h3 class="mainContainer__title"> Estes forams seus últimos treinos</h3>
+    // </div>
 }
