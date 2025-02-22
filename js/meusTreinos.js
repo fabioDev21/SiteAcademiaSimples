@@ -1,8 +1,76 @@
 const addNovoTreinoBtn = document.querySelector('.addNovoTreino__btn')
 const dialogForms = document.querySelector('#dialogForm')
-const btnViewTreino = document.querySelectorAll(".elementoTreino__btnView")
-btnViewTreino.forEach(unBtn => {
-    unBtn.addEventListener('click', el => console.log(el))
+const dialogElementoTreino = document.querySelector("#modalElementoTreino")
+const elementoTreino = document.querySelectorAll(".elementoTreino")
+
+
+const treinosProntos = {
+    treino: [{
+        id: 1,
+        nome: "Treino iniciante",
+        partes: "Costas, Bíceps e Tríceps",
+        exercicios: {
+            1: "Crucifixo Frontal",
+            2: "Supino",
+            3: "Polia"
+        }
+    },{
+        id: 2,
+        nome: "Treino força superior",
+        partes: "Braços, peito e cardio",
+        exercicios: {
+            1: "Remada",
+            2: "Barra",
+            3: "Bicicleta"
+        }
+    },{
+        id: 3,
+        nome: "Treino geral light",
+        partes: "Braços, Pernas e Cardio",
+        exercicios: {
+            1: "Supino",
+            2: "Leg Press",
+            3: "Esteira"
+        }
+    }]
+
+}
+
+// função para encontrar o botão de view de cada elemento e pesquisar dentro dos objetos qual treino deve ser mostrado no modal
+
+elementoTreino.forEach(unBtn => {
+    unBtn.addEventListener('click', el => {
+
+        if(el.target.classList == "elementoTreino__btnView"){
+            const elementoTreinoId = parseInt(el.target.parentElement.getAttribute("data-id"))
+            
+            const treinoEncontrado = treinosProntos.treino.find(treino => {
+                return treino.id == elementoTreinoId
+            });
+
+            if(dialogElementoTreino.querySelector('.modalElementoTreino__container')){
+                dialogElementoTreino.querySelector('.modalElementoTreino__container').remove()
+            }
+
+            dialogElementoTreino.showModal()
+            dialogElementoTreino.setAttribute("data-id", `${treinoEncontrado.id}`)
+            dialogElementoTreino.insertAdjacentHTML('afterbegin', `
+            <div class="modalElementoTreino__container">
+                <h3 class="modalElementoTreino__title">${treinoEncontrado.nome}</h3>
+                <h4 class="modalElementoTreino__subtitle">${treinoEncontrado.partes}</h4>
+                <ul>
+                    <li>${treinoEncontrado.exercicios[1]}</li>
+                    <li>${treinoEncontrado.exercicios[2]}</li>
+                    <li>${treinoEncontrado.exercicios[3]}</li>
+                </ul>
+            </div>    
+            `)
+        } else{
+            return
+        }
+        
+
+    })
 })
 
 addNovoTreinoBtn.addEventListener('click', () => {
@@ -111,7 +179,6 @@ function criaNovoTreino(){
     const idElemento = Date.now()
     const nomeDoTreino = document.querySelector('#nomeTreinoInpt').value
     
-
     /* Explicação desta lógica: 
         Pegamos o primeiro arquivo selecionado (files[0]).  
         Criamos uma URL temporária com URL.createObjectURL(imagemArquivo),
@@ -145,10 +212,8 @@ function coletaValuesDasPartesExercitadas(){
     return todosOsValuesGrupos
 }
 
-
 function mostraNovoTreino({idCaixaTreino, nome, parte1, parte2, parte3, imgTreino}){
 
-    console.log(parte1, parte2, parte3)
     const caixaParaAddTreinos = document.querySelector("#treinosAdicionados")
     const novoTreino = `
         <div class="elementoTreino" id="criado${idCaixaTreino}">
@@ -163,27 +228,10 @@ function mostraNovoTreino({idCaixaTreino, nome, parte1, parte2, parte3, imgTrein
     caixaParaAddTreinos.insertAdjacentHTML('beforeend', novoTreino)
     document.querySelector('body').style.gridTemplateRows = "15vh 150vh 15vh"
 
-    const btnViewNewTreino = document.getElementById(`criado${idCaixaTreino}`)
-    btnViewNewTreino.addEventListener('click', el => {
-        console.log(el.view)
-    })
-
     dialogForms.close()
     
     // estilizar a forma como o treino aparece e como a imagem do treino aparece, estilizar formulario
     // que seja possível editar o treino também,.muito necessário.
     // fazer o crud complete dessa página de treinos e refatorar o código para seu devido depois
     // fazer o condicionamento de parâmetros recebidos!!!
-
-
-    // treino a adicionar quando e ele decidir criar um treino novo
-    // <div id="treinosAdicionados" class="caixaTreinos">
-    // <h3 class="mainContainer__title"> Aqui estão seus exercícios personalizados</h3>
-    // </div>
-    
-    
-    // últimos treinos para mostrar abaixo do gráfico do usuário em seu perfil
-    // <div id="treinosUltimos" class="caixaTreinos">
-    // <h3 class="mainContainer__title"> Estes forams seus últimos treinos</h3>
-    // </div>
 }

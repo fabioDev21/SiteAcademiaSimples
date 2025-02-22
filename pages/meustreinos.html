@@ -18,7 +18,7 @@
     <main id="mainContainer">
         <h3 class="mainContainer__title"> Indicados pelo seu treinador! </h3>
         <div id="treinosProntos" class="caixaTreinos">
-            <div class="elementoTreino">
+            <div data-id="1" class="elementoTreino">
                 <img src="../assets/imgs/gym_bg.jpg" alt="Imagem do treino adicionado">
                 <div class="elementoTreino__titleNsubtitle">
                     <h4>Treino iniciante</h4>
@@ -26,7 +26,7 @@
                 </div>
                 <button class="elementoTreino__btnView">Visualizar</button>
             </div>
-            <div class="elementoTreino">
+            <div data-id="2" class="elementoTreino">
                 <img src="../assets/imgs/gym_bg.jpg" alt="Imagem do treino adicionado">
                 <div class="elementoTreino__titleNsubtitle">
                     <h4>Treino força superior</h4>
@@ -34,7 +34,7 @@
                 </div>
                 <button class="elementoTreino__btnView">Visualizar</button>
             </div>
-            <div class="elementoTreino">
+            <div data-id="3" class="elementoTreino">
                 <img src="../assets/imgs/gym_bg.jpg" alt="Imagem do treino adicionado">
                 <div class="elementoTreino__titleNsubtitle">
                     <h4>Treino geral light</h4>
@@ -91,6 +91,8 @@
         </div>
         <div id="treinosAdicionados" class="caixaTreinos">
         </div>
+        <dialog id="modalElementoTreino" data-id="0">
+        </dialog>
     </main>
     <footer>
         <p>&copy; Fábio da Silva</p>
