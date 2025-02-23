@@ -171,8 +171,7 @@
 }
 
 form{
-
-    /* adicionar estilização formulário */
+    /* adiciona estilização formulário */
     display: flex;
     flex-direction: column;
     inset: 0;

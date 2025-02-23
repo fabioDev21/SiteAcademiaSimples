@@ -33,7 +33,7 @@ const treinosProntos = {
             3: "Esteira"
         }
     }]
-
+    
 }
 
 // função para encontrar o botão de view de cada elemento e pesquisar dentro dos objetos qual treino deve ser mostrado no modal
@@ -192,12 +192,15 @@ function criaNovoTreino(){
     const novoTreinoCriado = {
         idCaixaTreino: idElemento,
         nome: nomeDoTreino,
-        parte1: todasAsPartesExercitadas[0],
-        parte2: todasAsPartesExercitadas[1],
-        parte3: todasAsPartesExercitadas[2],
-        imgTreino: imagemDoTreino
+        imgTreino: imagemDoTreino,
+        exercicios: {
+            parte1: todasAsPartesExercitadas[0],
+            parte2: todasAsPartesExercitadas[1],
+            parte3: todasAsPartesExercitadas[2],   
+        }
     }
-    
+    treinosProntos.treino.push(novoTreinoCriado)
+    console.log(treinosProntos)
     mostraNovoTreino(novoTreinoCriado)
 }
 
@@ -212,26 +215,54 @@ function coletaValuesDasPartesExercitadas(){
     return todosOsValuesGrupos
 }
 
-function mostraNovoTreino({idCaixaTreino, nome, parte1, parte2, parte3, imgTreino}){
-
+function mostraNovoTreino({idCaixaTreino, nome, imgTreino, exercicios}){
+    console.log(idCaixaTreino)
+    dialogForms.close()
     const caixaParaAddTreinos = document.querySelector("#treinosAdicionados")
     const novoTreino = `
-        <div class="elementoTreino" id="criado${idCaixaTreino}">
-            
+        <div data-id="${idCaixaTreino}" class="elementoTreino" id="criado${idCaixaTreino}">
             <img src="${imgTreino}" alt="Imagem do treino adicionado">
             <div class="elementoTreino__titleNsubtitle">
                 <h4>${nome}</h4>
-                <p>${parte1}, ${parte2} e ${parte3}</p>
+                <p>${exercicios.parte1}, ${exercicios.parte2} e ${exercicios.parte3}</p>
             </div>
-            <button id="criado${idCaixaTreino}" class="elementoTreino__btnView">Visualizar</button>
-        </div>` 
+            <button id="btnView${idCaixaTreino}" class="elementoTreino__btnView">Visualizar</button>
+        </div>`
     caixaParaAddTreinos.insertAdjacentHTML('beforeend', novoTreino)
     document.querySelector('body').style.gridTemplateRows = "15vh 150vh 15vh"
+    
+    // Localizo o botão de visualizar o treino e aguardo o evento de click nele. 
+    const btnViewNewTreino = document.querySelector(`#btnView${idCaixaTreino}`)
+    btnViewNewTreino.addEventListener("click", () => {        
+        
+        // Procura e assume o treino encontrado dentro dos treinos que já existem
+        const treinoEncontrado = treinosProntos.treino.find(treino => {
+            return treino.idCaixaTreino == idCaixaTreino
+        });
 
-    dialogForms.close()
+        // Se o dialog já tem coisa dentro, ele exclui para a adição de novos elementos relacionado ao treino clicado.
+        if(dialogElementoTreino.querySelector('.modalElementoTreino__container')){
+            dialogElementoTreino.querySelector('.modalElementoTreino__container').remove()
+        }
+
+        // aqui ele mostra o modal, seta o atributo e insere os elementos na tela. Puxando os atributos do objeto.
+        dialogElementoTreino.showModal()
+        dialogElementoTreino.setAttribute("data-id", `${treinoEncontrado}`)
+        dialogElementoTreino.insertAdjacentHTML('afterbegin', `
+        <div class="modalElementoTreino__container">
+            <h3 class="modalElementoTreino__title">${treinoEncontrado.nome}</h3>
+            <h4 class="modalElementoTreino__subtitle">Exercícios treinados: </h4>
+            <ul>
+                <li>${treinoEncontrado.exercicios.parte1}</li>
+                <li>${treinoEncontrado.exercicios.parte2}</li>
+                <li>${treinoEncontrado.exercicios.parte3}</li>
+            </ul>
+        </div>    
+        `)
+    })  
+}
     
     // estilizar a forma como o treino aparece e como a imagem do treino aparece, estilizar formulario
     // que seja possível editar o treino também,.muito necessário.
     // fazer o crud complete dessa página de treinos e refatorar o código para seu devido depois
     // fazer o condicionamento de parâmetros recebidos!!!
-}
