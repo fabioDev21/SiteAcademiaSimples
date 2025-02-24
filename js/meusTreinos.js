@@ -187,7 +187,7 @@ function criaNovoTreino(){
     const dadoImagemColetado = document.querySelector('#imagemDoTreino').files[0]
     const imagemDoTreino = URL.createObjectURL(dadoImagemColetado)
 
-    const todasAsPartesExercitadas = coletaValuesDasPartesExercitadas()
+    const todasAsPartesExercitadas = coletaValuesESelectsDasPartesExercitadas()
     
     const novoTreinoCriado = {
         idCaixaTreino: idElemento,
@@ -200,23 +200,27 @@ function criaNovoTreino(){
         }
     }
     treinosProntos.treino.push(novoTreinoCriado)
-    console.log(treinosProntos)
     mostraNovoTreino(novoTreinoCriado)
 }
 
-function coletaValuesDasPartesExercitadas(){
-    const todosOsValuesGrupos = []
-    const partesExercitadasValues = document.querySelectorAll('.tiposTreinos > label > input:checked')
+function coletaValuesESelectsDasPartesExercitadas(){
+    const todosOsValuesCheckados = []
+    const todosOsSelects = []
 
+    const partesExercitadasValues = document.querySelectorAll('.tiposTreinos > label > input:checked')
     partesExercitadasValues.forEach( (el) => {
-        todosOsValuesGrupos.push(el.defaultValue)
+        todosOsValuesCheckados.push(el.defaultValue)
     })
 
-    return todosOsValuesGrupos
+    const partesExercitadasSelects = document.querySelectorAll('.partesExercLabels > select')
+    partesExercitadasSelects.forEach( (el) => {
+        todosOsSelects.push(el.value)
+    })
+    console.log(todosOsSelects)
+    return (todosOsValuesCheckados, todosOsSelects)
 }
 
 function mostraNovoTreino({idCaixaTreino, nome, imgTreino, exercicios}){
-    console.log(idCaixaTreino)
     dialogForms.close()
     const caixaParaAddTreinos = document.querySelector("#treinosAdicionados")
     const novoTreino = `
